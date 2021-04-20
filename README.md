@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="/.github/logo.png" width="120" />    
+    <img src="/public/logo.svg" width="120" />    
     <h1>Podcastr</h1>  
     <p>🎧 An application to listen to a podcast! </p>    
     <hr />    
@@ -48,5 +48,5 @@ Can you imagine waking up on that beautiful Monday morning and listening to a ni
   <h1>Open Source</h1>
   <sub>Copyright © 2021-present, zevdvlpr.</sub>
   <p>Podcastr <a href="https://github.com/zevdvlpr/podcastr/tree/dev/LICENSE">is MIT licensed 💖</a></p>
-  <img src="/.github/icon.png" width="35" />
+  <img src="/public/favicon.png" width="35" />
 </div>
