@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="/.github/logo.png" width="120" />    
+    <img src="/.github/logo.png" width="200" />    
     <h1>Podcastr</h1>  
     <p>🎧 An application to listen to a podcast! </p>    
     <hr />    
