@@ -16,13 +16,13 @@
 
 Can you imagine waking up on that beautiful Monday morning and listening to a nice podcast about programming? You're in the right place!
 
-<img src="/.github/cover.png" width="700" /> 
+<img src="/.github/cover.png" width="700" />
 
 # Techs
 
- - [Next.js](https://nextjs.org/)  
- - [React.js](https://reactjs.org/)
- - [TypeScript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/)
+- [React.js](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 # Requirements
 

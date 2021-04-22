@@ -1,10 +1,10 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
-import { api } from '../../services/api'
+import { api } from '../../services/api';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
 import styles from './episode.module.scss';
@@ -19,7 +19,7 @@ type Episode = {
   url: string;
   publishedAt: string;
   description: string;
-}
+};
 
 interface EpisodeProps {
   episode: Episode;
@@ -55,7 +55,7 @@ export default function Episode({ episode }: EpisodeProps) {
         dangerouslySetInnerHTML={{ __html: episode.description }}
       />
     </div>
-  )
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -63,25 +63,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params: {
       _limit: 2,
       _sort: 'published_at',
-      _order: 'desc'
-    }
+      _order: 'desc',
+    },
   });
 
   const paths = data.map(episode => {
     return {
       params: {
         slug: episode.id,
-      }
-    }
+      },
+    };
   });
 
   return {
     paths,
-    fallback: 'blocking'
-  }
-}
+    fallback: 'blocking',
+  };
+};
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async ctx => {
   const { slug } = ctx.params;
 
   const { data } = await api.get(`/episodes/${slug}`);
@@ -91,17 +91,19 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     title: data.title,
     thumbnail: data.thumbnail,
     members: data.members,
-    publishedAt: format(parseISO(data.published_at), 'd MMM yy', { locale: ptBR }),
+    publishedAt: format(parseISO(data.published_at), 'd MMM yy', {
+      locale: ptBR,
+    }),
     duration: Number(data.file.duration),
     durationAsString: convertDurationToTimeString(Number(data.file.duration)),
     description: data.description,
-    url: data.file.url
-  }
+    url: data.file.url,
+  };
 
   return {
     props: {
-      episode
+      episode,
     },
     revalidate: 60 * 60 * 24, // 24 hours
-  }
-}
+  };
+};

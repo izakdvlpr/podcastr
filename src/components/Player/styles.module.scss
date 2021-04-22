@@ -76,22 +76,20 @@
 .buttons {
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   margin-top: 2.5rem;
   gap: 1.5rem;
-  
+
   button {
     background: transparent;
     border: 0;
     font-size: 0;
-    
+
     &.playButton {
       width: 4rem;
       height: 4rem;
       border-radius: 1rem;
-      background:  var(--purple-400);
+      background: var(--purple-400);
     }
   }
 }
-
-
